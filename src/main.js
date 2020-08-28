@@ -11,7 +11,10 @@ import 'vant/lib/index.css'
 // 引入rem适配插件 —— amfe-flexible
 import 'amfe-flexible'
 import HmHeader from './components/HmHeader.vue'
+import HmLogo from './components/HmLogo.vue'
+
 Vue.component('hm-header', HmHeader)
+Vue.component('hm-logo', HmLogo)
 
 Vue.use(Vant)
 
