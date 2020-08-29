@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import HmHeader from './components/HmHeader.vue'
 import HmLogo from './components/HmLogo.vue'
+import HmNavitem from './components/HmNavitem.vue'
 
 // 导入通用样式
 import './style/base.less'
@@ -22,6 +23,7 @@ axios.defaults.baseURL = 'http://localhost:3000'
 // 全局注册组件
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
+Vue.component('hm-navitem', HmNavitem)
 
 // 注册vant插件
 Vue.use(Vant)

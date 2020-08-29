@@ -56,8 +56,11 @@ export default {
   methods: {
     async login () {
       const res = await this.$axios.post('/login', this.user)
-      const { statusCode, message } = res.data
+      const { statusCode, message, data } = res.data
       if (statusCode === 200) {
+        console.log(res.data)
+        localStorage.setItem('token', data.token)
+        localStorage.setItem('id', data.user.id)
         this.$toast.success(message)
         this.$router.push('/user')
       } else {
