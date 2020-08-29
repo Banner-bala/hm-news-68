@@ -28,7 +28,7 @@
           注册
         </van-button>
       </div>
-      <p class="tip">已有账号？ <router-link to="/login"><span>登录账号</span></router-link></p>
+      <p class="tips">已有账号？<router-link to="/login"><span> 登录账号</span></router-link></p>
     </van-form>
   </div>
 </template>
@@ -65,7 +65,23 @@ export default {
       const { statusCode, message } = res.data
       if (statusCode === 200) {
         this.$toast(message)
-        this.$router.push('/login')
+        // 1. query 进行传参
+        // this.$router.push(`/login?username=${this.user.username}&password=${this.user.password}`)
+
+        // this.$router.push({
+        //   path: '/login',
+        //   query: this.user
+        //   // query: {
+        //   //   username: this.user.username,
+        //   //   password: this.user.password
+        //   // }
+        // })
+
+        // 2. params 进行传参
+        this.$router.push({
+          name: 'login',
+          params: this.user
+        })
       } else {
         this.$toast(message)
       }
@@ -74,14 +90,18 @@ export default {
 }
 </script>
 
-<style lang='less'>
-  .tip{
-    text-align: right;
+<style lang='less' scoped>
+  // scoped 属性： 提供给选择器加一个属性选择器，给不同组件 设置样式
+  //                原因：（因为没有网页跳转，仍在同一页面，样式共用）
+  // 实现步骤： 1. 给当前模板元素 添加一个特殊属性 [data-v-xxxx]
+  //           2. 再给当前组件中 选择器上添加一个 属性选择器 tips[data-v-xxxx]
+  .tips{
     font-size: 16px;
-    margin-right: 18px;
+    text-align: right;
+    margin: 18px;
 
       span{
-        color: orange;
+        color:orange
       }
   }
 </style>
