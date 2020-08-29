@@ -23,13 +23,18 @@
           提交
         </van-button>
       </div>
-    </van-form>
     <p class="tips">没有账号？<router-link to="/register"><span> 注册账号</span></router-link></p>
+    </van-form>
   </div>
 </template>
 
 <script>
 export default {
+  created () {
+    const { username, password } = this.$route.params
+    this.user.username = username
+    this.user.password = password
+  },
   data () {
     return {
       user: {
@@ -63,7 +68,7 @@ export default {
 }
 </script>
 
-<style lang='less'>
+<style lang='less' scoped>
   .tips{
     font-size: 16px;
     text-align: right;

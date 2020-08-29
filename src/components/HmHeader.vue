@@ -27,17 +27,20 @@ export default {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  .back,
-  .extra {
-    width: 50px;
-  }
-  .iconfont {
-    font-size: 16px;
-  }
-  .title {
-    flex: 1;
-    font-size: 16px;
-    font-weight: 700;
-  }
+
+    .back,
+    .extra {
+      width: 50px;
+    }
+
+    .iconfont {
+      font-size: 16px;
+    }
+
+    .title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 700;
+    }
 }
 </style>
