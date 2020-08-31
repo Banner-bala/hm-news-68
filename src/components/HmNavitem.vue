@@ -10,7 +10,6 @@
 export default {
   methods: {
     clickFn () {
-      console.log(this.to)
       this.$router.push(this.to)
     }
   },
@@ -24,11 +23,14 @@ export default {
   .nav-item{
     display: flex;
     margin-left: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ccc;
     height: 50px;
     line-height: 50px;
     font-size: 14px;
 
+    .title{
+      font-size: 16px;
+    }
     .content{
       flex:1;
       text-align: right;

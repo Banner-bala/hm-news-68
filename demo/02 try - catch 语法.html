@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // try - catch 语法: try{}  catch(e){console.log(e)}
+
+  // try：   尝试运行可能报错的代码
+  // catch： 处理报错状态 —— catch(e) 中 e 为错误信息
+
+  function fn () {
+    try{
+      console.log(num)
+    }catch (e){
+      console.log('错误信息：',e)
+      console.log('num未定义')
+    }
+  }
+  fn()
+</script>
+</body>
+</html>

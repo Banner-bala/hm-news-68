@@ -58,7 +58,7 @@ export default {
       const res = await this.$axios.post('/login', this.user)
       const { statusCode, message, data } = res.data
       if (statusCode === 200) {
-        console.log(res.data)
+        // console.log(res)
         localStorage.setItem('token', data.token)
         localStorage.setItem('id', data.user.id)
         this.$toast.success(message)
